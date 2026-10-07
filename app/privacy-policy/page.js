@@ -1,0 +1,2 @@
+export const metadata={title:"Privacy Policy",alternates:{canonical:"/privacy-policy"}};
+export default function P(){return(<section className="sec"><div className="wrap max-w-3xl"><h1 className="h2">Privacy Policy</h1><p className="mt-4 leading-relaxed">We collect only the information you submit through our forms (name, email, phone, message) to respond to your enquiry. We do not sell your data. Contact us to request deletion. Replace this text with wording reviewed by your legal advisor.</p></div></section>)}

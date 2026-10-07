@@ -1,0 +1,4 @@
+export const metadata={title:"About Us",description:"Learn about Optimark Exam Solution Pvt Ltd, our mission, values and approach to secure examinations.",alternates:{canonical:"/about"}};
+export default function About(){return(<section className="sec"><div className="wrap max-w-3xl"><h1 className="h2">About Optimark</h1>
+<p className="mt-4 leading-relaxed">Optimark Exam Solution Pvt Ltd combines proven examination processes with modern technology to deliver reliable testing and assessment services for exam bodies, candidates and recruiters.</p>
+<h2 className="mt-8 text-2xl font-semibold">Our Values</h2><div className="mt-4 grid gap-4 sm:grid-cols-3">{["Integrity","Innovation","Accountability"].map(v=><div key={v} className="card text-center font-semibold">{v}</div>)}</div></div></section>)}

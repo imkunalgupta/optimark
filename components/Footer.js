@@ -1,0 +1,7 @@
+import Link from "next/link";import Image from "next/image";import {SITE,solutions,sectors} from "@/data/site";
+export default function Footer(){return(<footer className="bg-slate-900 text-slate-300"><div className="wrap grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+<div><Link href="/" aria-label={SITE.name} className="inline-block rounded-lg bg-white px-3 py-2"><Image src="/logo.png" alt={SITE.name} width={180} height={72} className="h-12 w-auto"/></Link><p className="mt-2 text-sm">{SITE.tagline}</p><p className="mt-3 text-sm">{SITE.email}<br/>{SITE.phone}</p></div>
+<div><p className="font-semibold text-white">Sectors</p><ul className="mt-2 space-y-1 text-sm">{sectors.map(s=><li key={s.slug}><Link href={`/sectors/${s.slug}`}>{s.title}</Link></li>)}</ul></div>
+<div><p className="font-semibold text-white">Solutions</p><ul className="mt-2 space-y-1 text-sm">{solutions.map(s=><li key={s.slug}><Link href={`/solutions/${s.slug}`}>{s.title}</Link></li>)}</ul></div>
+<div><p className="font-semibold text-white">Company</p><ul className="mt-2 space-y-1 text-sm"><li><Link href="/about">About</Link></li><li><Link href="/careers">Careers</Link></li><li><Link href="/contact">Contact</Link></li><li><Link href="/privacy-policy">Privacy Policy</Link></li></ul></div></div>
+<p className="border-t border-slate-800 py-4 text-center text-xs">© {new Date().getFullYear()} {SITE.name}. All rights reserved.</p></footer>)}
