@@ -21,8 +21,11 @@ export default function Detail({ x, type, all }) {
       <section className="relative h-[50vh] min-h-[340px] overflow-hidden bg-slate-700 text-white md:h-[60vh]">
         {x.img ? (
           <>
-            <Image src={x.img} alt={x.title} fill priority sizes="100vw" className="hs-kenburns object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand/90 via-brand/60 to-transparent md:via-brand/40" />
+            <Image src={x.img} alt={x.title} fill priority sizes="100vw" className={`hs-kenburns object-cover ${x.pos || "object-center"}`} />
+            <div
+              className={`absolute inset-0 bg-gradient-to-r ${x.dim ? "from-brand via-brand/90 to-brand/10 md:via-brand/75" : "from-brand/90 via-brand/60 to-transparent md:via-brand/40"}`}
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slate-950/50 to-transparent" />
           </>
         ) : (
           <>
@@ -46,7 +49,24 @@ export default function Detail({ x, type, all }) {
           <p className="hs-up mt-5 max-w-md text-lg text-white/90" style={{ animationDelay: "550ms" }}>
             {x.short}
           </p>
+          <ul className="mt-7 hidden max-w-2xl flex-wrap gap-2 sm:flex">
+            {x.points.slice(0, 3).map((p, k) => (
+              <li
+                key={p}
+                className="hs-up flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm backdrop-blur-md"
+                style={{ animationDelay: `${700 + k * 120}ms` }}
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                {p}
+              </li>
+            ))}
+          </ul>
         </div>
+        <a href="#features" aria-label="Scroll to details" className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block">
+          <span className="flex h-10 w-6 justify-center rounded-full border-2 border-white/60 pt-2">
+            <span className="h-2 w-1 animate-bounce rounded-full bg-white" />
+          </span>
+        </a>
       </section>
 
       {/* Overview + features */}
