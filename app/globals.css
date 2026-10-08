@@ -6,3 +6,21 @@ body{@apply bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slat
 .wrap{@apply mx-auto w-full max-w-6xl px-5}
 .sec{@apply py-16 md:py-20}
 .h2{@apply text-3xl font-bold text-brand dark:text-blue-300 md:text-4xl}
+/* Hero slider */
+@keyframes hs-kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes hs-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes hs-out{to{opacity:0;transform:translateY(-20px)}}
+@keyframes hs-progress{from{width:0}to{width:100%}}
+.hs-kenburns{animation:hs-kenburns 6s ease-out forwards}
+.hs-up{opacity:0;animation:hs-up .8s cubic-bezier(.22,1,.36,1) forwards}
+.hs-out{animation:hs-out .5s ease-in forwards}
+.hs-progress{animation-name:hs-progress;animation-timing-function:linear;animation-fill-mode:forwards}
+@media (prefers-reduced-motion:reduce){.hs-kenburns,.hs-up,.hs-progress{animation:none;opacity:1}.hs-out{animation:none;opacity:0}}
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease-out,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+/* Floating background blobs */
+@keyframes hs-float{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-25px)}}
+.hs-float{animation:hs-float 9s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.hs-float{animation:none}}

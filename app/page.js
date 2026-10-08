@@ -1,9 +1,6 @@
-import Link from "next/link";import Cards from "@/components/Cards";import {solutions,sectors,SITE} from "@/data/site";
+import Link from "next/link";import Cards from "@/components/Cards";import HeroSlider from "@/components/HeroSlider";import {solutions,sectors} from "@/data/site";
 export default function Home(){return(<>
-<section className="bg-gradient-to-br from-brand via-brand-light to-cyan-600 py-20 text-white md:py-28"><div className="wrap">
-<h1 className="max-w-3xl text-4xl font-bold leading-tight md:text-6xl">{SITE.tagline}</h1>
-<p className="mt-5 max-w-2xl text-lg opacity-95">Optimark helps universities, government bodies and corporates run fair, error-free examinations and assessments, from application to result.</p>
-<div className="mt-8 flex flex-wrap gap-4"><Link href="/contact" className="btn">Get a Free Consultation</Link><Link href="/solutions/computer-based-test" className="rounded-full border-2 border-white px-6 py-3 font-semibold">Explore Solutions</Link></div></div></section>
+<HeroSlider/>
 <section className="sec"><div className="wrap"><h2 className="h2">Sectors We Serve</h2><p className="mb-8 mt-2 text-slate-600 dark:text-slate-400">Tailored testing services for every organisation.</p><Cards items={sectors} base="/sectors"/></div></section>
 <section className="sec bg-slate-50 dark:bg-slate-900/40"><div className="wrap"><h2 className="h2">Our Solutions</h2><p className="mb-8 mt-2 text-slate-600 dark:text-slate-400">Covering the full examination lifecycle.</p><Cards items={solutions} base="/solutions"/></div></section>
 <section className="sec"><div className="wrap grid gap-6 text-center sm:grid-cols-2 lg:grid-cols-4">{[["500+","Exams Conducted"],["1000+","Test Centres"],["10 Lakh+","Candidates"],["50+","Clients"]].map(([n,l])=><div key={l} className="card"><p className="text-4xl font-bold text-accent">{n}</p><p>{l}</p></div>)}</div><p className="mt-3 text-center text-xs text-slate-500">*Sample figures. Replace with real numbers in app/page.js</p></section>
