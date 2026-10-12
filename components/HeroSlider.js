@@ -43,10 +43,11 @@ export default function HeroSlider() {
 
   // Remember the outgoing slide so it stays visible underneath while the new one fades in
   const go = useCallback(
-    (k) => setState((s) => {
-      const to = ((k % n) + n) % n;
-      return to === s.i ? s : { i: to, last: s.i };
-    }),
+    (k) =>
+      setState((s) => {
+        const to = ((k % n) + n) % n;
+        return to === s.i ? s : { i: to, last: s.i };
+      }),
     [n]
   );
   const next = useCallback(() => go(i + 1), [go, i]);
@@ -112,14 +113,23 @@ export default function HeroSlider() {
             {(active || leaving) && (
               <div className={`wrap relative flex h-full flex-col justify-center ${leaving ? "hs-out" : ""}`}>
                 <div className="max-w-2xl">
-                  <span className="hs-up inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm" style={{ animationDelay: "500ms" }}>
+                  <span
+                    className="hs-up inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm"
+                    style={{ animationDelay: "500ms" }}
+                  >
                     <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
                     {s.tag}
                   </span>
-                  <Heading className="hs-up mt-5 text-4xl font-bold leading-tight drop-shadow-lg md:text-6xl" style={{ animationDelay: "650ms" }}>
+                  <Heading
+                    className="hs-up mt-5 text-4xl font-bold leading-tight drop-shadow-lg md:text-6xl"
+                    style={{ animationDelay: "650ms" }}
+                  >
                     {s.title}
                   </Heading>
-                  <p className="hs-up mt-5 max-w-xl text-base text-white/90 md:text-lg" style={{ animationDelay: "800ms" }}>
+                  <p
+                    className="hs-up mt-5 max-w-xl text-base text-white/90 md:text-lg"
+                    style={{ animationDelay: "800ms" }}
+                  >
                     {s.text}
                   </p>
                   <div className="hs-up mt-8 flex flex-wrap gap-4" style={{ animationDelay: "950ms" }}>
@@ -127,7 +137,10 @@ export default function HeroSlider() {
                       {s.cta.label}
                       <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
                     </Link>
-                    <Link href="/contact" className="rounded-full border-2 border-white/80 px-6 py-3 font-semibold transition hover:bg-white hover:text-brand">
+                    <Link
+                      href="/contact"
+                      className="rounded-full border-2 border-white/80 px-6 py-3 font-semibold transition hover:bg-white hover:text-brand"
+                    >
                       Contact Us
                     </Link>
                   </div>
@@ -139,10 +152,18 @@ export default function HeroSlider() {
       })}
 
       {/* Arrows */}
-      <button onClick={prev} aria-label="Previous slide" className="absolute left-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl backdrop-blur-sm transition hover:scale-110 hover:bg-white/25 md:flex">
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl backdrop-blur-sm transition hover:scale-110 hover:bg-white/25 md:flex"
+      >
         ‹
       </button>
-      <button onClick={next} aria-label="Next slide" className="absolute right-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl backdrop-blur-sm transition hover:scale-110 hover:bg-white/25 md:flex">
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-3 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-2xl backdrop-blur-sm transition hover:scale-110 hover:bg-white/25 md:flex"
+      >
         ›
       </button>
 

@@ -1,6 +1,6 @@
 export const SITE={name:"Optimark Exam Solution Pvt Ltd",short:"Optimark",
 url:process.env.NEXT_PUBLIC_SITE_URL||"https://www.optimarkexam.com",
-email:"info@optimarkexam.com",phone:"+91-00000-00000",address:"[Your office address], India",
+email:"info@optimarkexam.com",phone:"+91-9472207529",address:"H No. 2093, Metro Vihar, Holambi Kalan, Block-A, Narela, North West Delhi - 110040, Delhi, India",
 tagline:"Smart, Secure & Scalable Exam Solutions"};
 export const solutions=[
 {slug:"online-application-processing",img:"/solution/onlineApplication.jpg",icon:"📝",title:"Online Application Processing",short:"Registration, fee collection, admit cards and candidate management.",long:"A complete online front-end for your exam: configurable forms, document upload, payment gateway integration, admit card generation and a candidate helpdesk.",points:["Custom application forms","Secure online payments","Automated admit cards","Candidate helpdesk & MIS reports"]},

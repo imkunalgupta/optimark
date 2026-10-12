@@ -1,6 +1,7 @@
 # Optimark Exam Solution – Next.js + Tailwind
+
 1. `npm install`
-2. `cp .env.example .env.local` and set your domain / Resend key
+2. `cp .env.example .env.local` and set your domain plus the Resend API key for the contact form (see comments in `.env.example`)
 3. `npm run dev` then open http://localhost:3000
 4. `npm run build && npm start` for production (or deploy to Vercel)
 

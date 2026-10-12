@@ -107,15 +107,17 @@ export default function Detail({ x, type, all }) {
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Our Process</p>
             <h2 className="h2 mt-2">Simple, proven, reliable</h2>
           </Reveal>
-          <div className="relative mt-12 grid gap-8 md:grid-cols-4">
-            <div className="absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-brand/0 via-brand/30 to-brand/0 md:block" />
+          <div className="relative mt-14 grid gap-6 md:grid-cols-4">
+            <div className="absolute left-[12.5%] right-[12.5%] top-8 hidden h-0.5 bg-gradient-to-r from-brand via-accent to-brand-light opacity-40 md:block" />
             {steps.map(([t, d], k) => (
-              <Reveal key={t} delay={k * 150} className="relative text-center">
-                <span className="relative mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-light text-lg font-bold text-white shadow-lg shadow-brand/30 ring-8 ring-white dark:ring-slate-950">
-                  {k + 1}
-                </span>
-                <h3 className="mt-4 font-semibold">{t}</h3>
-                <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{d}</p>
+              <Reveal key={t} delay={k * 120}>
+                <div className="group relative rounded-2xl p-4 text-center transition hover:bg-white dark:hover:bg-slate-900">
+                  <span className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-brand-light text-lg font-bold text-white shadow-lg shadow-brand/30 ring-8 ring-slate-50 transition duration-300 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:from-accent group-hover:to-orange-400 dark:ring-slate-950">
+                    {String(k + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold group-hover:text-brand dark:group-hover:text-blue-300">{t}</h3>
+                  <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">{d}</p>
+                </div>
               </Reveal>
             ))}
           </div>
