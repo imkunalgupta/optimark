@@ -7,7 +7,7 @@ const DELAY = 5000;
 
 const slides = [
   {
-    img: "/home/online assessement.jpg",
+    img: "/home/online-assessment.jpg",
     tag: "Online Assessment",
     title: "Secure, Seamless Online Examinations",
     text: "Computer based tests with smart proctoring, instant scoring and zero paperwork, built to scale from a classroom to lakhs of candidates.",
